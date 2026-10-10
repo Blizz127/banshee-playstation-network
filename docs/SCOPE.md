@@ -11,3 +11,10 @@
 2. Presence and friends, bridged into the Banshee launcher.
 3. Rooms and matchmaking for one homebrew title.
 4. Trophies and save sync, tracked by Banshee.
+
+## Retail trophy mirroring (moved ahead of Phase 4, requested 2026-10-10)
+Example: Monster Hunter Stories 3. A retail game's own online features can't connect to Banshee PSN. PS5 trophies unlock locally while offline, though, so:
+1. Play offline. Trophies are saved on the console.
+2. A homebrew app on the jailbroken PS5 reads the local trophy data (read-only).
+3. It uploads the unlocks, playtime and now-playing to Banshee, where they show on the Banshee profile and the launcher's friends list.
+Out of scope: retail online modes (co-op, trading, matchmaking).
