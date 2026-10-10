@@ -1,0 +1,19 @@
+# AX41 compose snippet — NOT deployed yet. Bound to the Tailscale IP only.
+# TLS: terminate with a Banshee Lab CA cert (step-ca) in front, or add uvicorn --ssl-* flags.
+services:
+  banshee-np:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "100.77.107.126:8460:8460"   # Tailscale only; placeholder port
+    environment:
+      BPN_VERIFIER: dev               # switch to "sso" once the Banshee SSO verifier is wired
+      BPN_DEV_TOKEN: ${BPN_DEV_TOKEN:?set in .env}
+      BPN_SIGNING_KEY: ${BPN_SIGNING_KEY:?set in .env}
+      BPN_ADMIN_TOKEN: ${BPN_ADMIN_TOKEN:?set in .env}
+    volumes:
+      - banshee-np-data:/data
+volumes:
+  banshee-np-data:
