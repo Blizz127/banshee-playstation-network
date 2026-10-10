@@ -83,3 +83,8 @@ The Banshee launcher reads `now-playing` for the friends list and Who's Online.
 
 ## 7. Errors
 Errors use FastAPI's shape `{"detail": "..."}` (or a list for 422 validation errors).
+
+## Target environment (Blizz's console, 2026-10-10)
+- Firmware 11.2, jailbroken with etaHEN + kstuff. The client ships as an etaHEN-loadable homebrew payload/app.
+- Console on home LAN at 192.168.0.227. It reaches the Banshee PSN service over Tailscale or a LAN relay, since the AX41 can't see the home LAN directly.
+- Whether the local trophy DB is readable is still to be confirmed by the first test build.
